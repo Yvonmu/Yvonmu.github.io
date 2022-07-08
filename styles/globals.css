@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#scroll-container {
+  overflow: hidden;
+}
+#scroll-text {
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+
+}
+/* for firefox */
+@-moz-keyframes my-animation {
+  from { -moz-transform: translateX(100%);}
+  to { -moz-transform: translateX(-100%);}
+}
+
+/* for chrome */
+@-webkit-keyframes my-animation {
+  from { -webkit-transform: translateX(100%);}
+  to { -webkit-transform: translateX(-100%);}
+}
+
+@keyframes my-animation {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to{
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  
+}
+
+.typing {
+  width: 22ch;
+  animation: typing-one 5s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+
+@keyframes typing-one {
+  from{
+    width: 0;
+  }
+}
+@keyframes blink {
+  50% {
+    border-color: rgba(0, 255, 0, .75);
+  }
+  
+}
+
